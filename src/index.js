@@ -2,14 +2,15 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+
+import Index from "./views/Index";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />}/>
+        <Route path="/" element={<Index />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
