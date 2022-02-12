@@ -5,12 +5,14 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 import Index from "./views/Index";
+import Plays from "./views/plays/Index"
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/plays" element={<Plays />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

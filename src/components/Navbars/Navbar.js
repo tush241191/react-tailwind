@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/img/abi_logo_png.png";
 
 const Navbar = () => {
@@ -254,25 +255,24 @@ const Navbar = () => {
             aria-label="Global"
           >
             <div>
-              <a
-                href="#"
+              <Link
+                to={"/"}
                 className="text-orange-500 rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
-                aria-current="page"
               >
                 Home
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to={"/plays"}
                 className="text-gray-300 hover:text-orange-500 rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
               >
                 Plays
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to={"/"}
                 className="text-gray-300 hover:text-orange-500 rounded-md py-2 px-3 inline-flex items-center text-sm font-medium"
               >
                 Events
-              </a>
+              </Link>
             </div>
             <div className="flex space-x-6">
               {social.map((item) => (
