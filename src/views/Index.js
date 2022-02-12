@@ -2,34 +2,36 @@ import Navbar from "../components/Navbars/Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 
-import slide1 from "../assets/img/1.jpeg";
-import slide2 from "../assets/img/2.jpeg";
-import slide3 from "../assets/img/3.jpeg";
+import slide1 from "../assets/img/4.jpeg";
+import slide2 from "../assets/img/5.jpeg";
+import slide3 from "../assets/img/6.jpeg";
 
 const Index = () => {
   return (
     <>
       <Navbar />
       <main>
-        <Carousel
-          className="my-1 cursor-pointer"
-          autoPlay={true}
-          infiniteLoop={true}
-          showThumbs={false}
-        >
-          <div>
-            <img className="w-full h-full object-cover" src={slide1} />
-            <p className="legend">Legend 1</p>
-          </div>
-          <div>
-            <img className="w-full h-full object-cover" src={slide2} />
-            <p className="legend">Legend 2</p>
-          </div>
-          <div>
-            <img className="w-full h-full object-cover" src={slide3} />
-            <p className="legend">Legend 3</p>
-          </div>
-        </Carousel>
+        <div className="w-full bg-white py-1">
+          <Carousel
+            className="cursor-pointer"
+            autoPlay={true}
+            infiniteLoop={true}
+            showThumbs={false}
+          >
+            <div>
+              <img className="w-full h-full object-cover" src={slide1} />
+              <p className="legend">Legend 1</p>
+            </div>
+            <div>
+              <img className="w-full h-full object-cover" src={slide2} />
+              <p className="legend">Legend 2</p>
+            </div>
+            <div>
+              <img className="w-full h-full object-cover" src={slide3} />
+              <p className="legend">Legend 3</p>
+            </div>
+          </Carousel>
+        </div>
         <div className="w-full bg-gray-100">
           <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
             <div className="px-6 py-6 bg-blue-700 rounded-lg md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
