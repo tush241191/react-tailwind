@@ -5,6 +5,7 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
 import Index from "./views/Index";
+import PlayDetails from "./views/plays/Details";
 import Plays from "./views/plays/Index"
 
 ReactDOM.render(
@@ -13,6 +14,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/plays" element={<Plays />} />
+        <Route path="/plays/:id" element={<PlayDetails />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

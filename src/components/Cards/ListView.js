@@ -1,23 +1,30 @@
+import { Link } from "react-router-dom";
+
 const ListView = ({ plays }) => {
   return (
     <>
       {plays.map((play) => (
-        <div key={play.id} href={play.href} className="group flex">
-          <div className="w-60 aspect-w-2 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden cursor-pointer">
+        <div key={play.id} className="group flex">
+          <Link
+            key={play.id}
+            to={"/plays/" + play.id}
+            className="w-60 aspect-w-2 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden cursor-pointer"
+          >
             <img
               src={play.imageSrc}
               alt={play.imageAlt}
               className="w-full h-full object-center object-cover hover:opacity-75"
             />
-          </div>
+          </Link>
           <div className="relative ml-4 flex-1 space-y-4 h-full">
             <h3 className="text-lg font-medium text-gray-900">{play.name}</h3>
             <span className="text-sm text-green-600">2hrs 50 min</span>
             <div className="text-base text-gray-700">Comedy | Drama</div>
             <div className="absolute bottom-0 w-full">
               <div className="py-4 border-t border-b flex justify-between items-center">
-                <button
-                  type="button"
+                <Link
+                  key={play.id}
+                  to={"/plays/" + play.id}
                   className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                 >
                   <svg
@@ -35,7 +42,7 @@ const ListView = ({ plays }) => {
                     />
                   </svg>
                   Book Now
-                </button>
+                </Link>
                 <div className="flex items-center text-gray-600 hover:text-gray-900 cursor-pointer">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
