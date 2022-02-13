@@ -5,7 +5,7 @@ const GridView = ({ plays }) => {
     <>
       {plays.map((play) => (
         <Link key={play.id} to={"/plays/"+play.id} className="group">
-          <div className="w-full aspect-w-2 aspect-h-1 bg-gray-200 rounded-lg overflow-hidden ">
+          <div className="w-full bg-gray-200 rounded-lg overflow-hidden ">
             <img
               src={play.imageSrc}
               alt={play.imageAlt}
