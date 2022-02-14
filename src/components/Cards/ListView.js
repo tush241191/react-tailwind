@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const ListView = ({ plays }) => {
+const ListView = ({ plays, textStyle="text-lg" }) => {
   return (
     <>
       {plays.map((play) => (
@@ -17,7 +17,7 @@ const ListView = ({ plays }) => {
             />
           </Link>
           <div className="relative ml-4 flex-1 space-y-4 h-full">
-            <h3 className="text-lg font-medium text-gray-900">{play.name}</h3>
+            <h3 className={`${textStyle} font-medium text-gray-900`}>{play.name}</h3>
             <span className="text-sm text-green-600">2hrs 50 min</span>
             <div className="text-base text-gray-700">Comedy | Drama</div>
             <div className="absolute bottom-0 w-full">

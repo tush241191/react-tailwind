@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const GridView = ({ plays }) => {
+const GridView = ({ plays, textStyle="text-lg" }) => {
   return (
     <>
       {plays.map((play) => (
@@ -12,7 +12,7 @@ const GridView = ({ plays }) => {
               className="w-full h-full object-center object-cover group-hover:opacity-75"
             />
           </div>
-          <h3 className="mt-4 text-lg text-gray-900">{play.name}</h3>
+          <h3 className={`${textStyle} mt-4 text-gray-900`}>{play.name}</h3>
           <p className="hidden mt-1 text-lg font-medium text-gray-900">
             {play.price}
           </p>
