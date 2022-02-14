@@ -1,5 +1,8 @@
 import Navbar from "../../components/Navbars/Navbar";
 
+import slide1 from "../../assets/img/5.jpeg";
+import play1 from "../../assets/img/p1.jpeg";
+
 const PlayDetails = () => {
   return (
     <>
@@ -7,28 +10,64 @@ const PlayDetails = () => {
       <main>
         <div className="bg-white">
           <div>
-            <div>
+            <div className="bg-gray-900 relative">
+              <div
+                class="absolute inset-0 bg-gray-900 bg-opacity-50 transition-opacity"
+                aria-hidden="true"
+              ></div>
               <img
-                className="h-48 w-full object-cover lg:h-80"
-                src="https://images.unsplash.com/photo-1444628838545-ac4016a5418a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                className="2xl:max-w-7xl 2xl:mx-auto w-full object-cover 2xl:rounded-md"
+                src={slide1}
                 alt=""
               />
+              <div className="w-full h-40 bg-gray-900"></div>
             </div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
-                <div className="flex">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 relative">
+              <div className="-mt-12 sm:-mt-80 sm:flex sm:items-start sm:space-x-5">
+                <div className="w-full flex items-end">
                   <img
-                    className="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
-                    src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                    className="h-24 rounded-md ring-1 ring-gray-900 sm:h-96 object-contain"
+                    src={play1}
                     alt=""
                   />
-                </div>
-                <div className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
-                  <div className="sm:hidden 2xl:block mt-6 min-w-0 flex-1">
-                    <h1 className="text-2xl font-bold text-gray-900 truncate">
-                      Ricardo Cooper
-                    </h1>
+                  <div className="w-full h-full flex items-center justify-between pb-16">
+                    <div className="ml-4 space-y-2 pb-2">
+                      <h1 className="text-4xl text-white font-bold">
+                        Eka Lagnachi Pudhchi Gosht
+                      </h1>
+                      <h3 className="text-lg text-gray-300">Marathi</h3>
+                      <span className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-transparent border border-gray-300 text-gray-300">
+                        Comedy
+                      </span>
+                      <h3 className="text-sm text-gray-300 flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="h-4 w-4 mr-1"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                        2 hrs 50 mins
+                      </h3>
+                    </div>
+                    <div className="">
+                      <button
+                        type="button"
+                        className="inline-flex items-center px-6 py-3  text-base font-medium rounded-full shadow-sm text-gray-100 bg-gradient-to-r from-red-600 to-blue-700 hover:bg-gradient-to-l hover:from-red-600 hover:to-blue-700 focus:outline-none"
+                      >
+                        Book Tickets
+                      </button>
+                    </div>
                   </div>
+                </div>
+                <div className="sm:hidden mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
                   <div className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
                     <button
                       type="button"
@@ -64,11 +103,7 @@ const PlayDetails = () => {
                   </div>
                 </div>
               </div>
-              <div className="hidden sm:block 2xl:hidden mt-6 min-w-0 flex-1">
-                <h1 className="text-2xl font-bold text-gray-900 truncate">
-                  Ricardo Cooper
-                </h1>
-              </div>
+              <div className="hidden sm:block 2xl:hidden mt-6 min-w-0 flex-1"></div>
             </div>
           </div>
         </div>
