@@ -8,6 +8,18 @@ import play3 from "../../assets/img/p3.jpeg";
 import play4 from "../../assets/img/p4.jpeg";
 import GridView from "../../components/Cards/GridView";
 
+import roadImg from "../../assets/img/clip-arts/road-2.png";
+import one from "../../assets/img/clip-arts/1.png";
+import two from "../../assets/img/clip-arts/2.png";
+import three from "../../assets/img/clip-arts/3.png";
+import four from "../../assets/img/clip-arts/4.png";
+import five from "../../assets/img/clip-arts/5.png";
+import six from "../../assets/img/clip-arts/6.png";
+import seven from "../../assets/img/clip-arts/7.png";
+import eight from "../../assets/img/clip-arts/8.png";
+import nine from "../../assets/img/clip-arts/9.png";
+import ten from "../../assets/img/clip-arts/10.png";
+
 const PlayDetails = () => {
   const files = [
     {
@@ -90,10 +102,70 @@ const PlayDetails = () => {
     },
   ];
 
+  const seatsCount = [
+    {
+      id: 1,
+      count: 1,
+      img: one,
+    },
+    {
+      id: 2,
+      count: 2,
+      img: two,
+    },
+    {
+      id: 3,
+      count: 3,
+      img: three,
+    },
+    {
+      id: 4,
+      count: 4,
+      img: four,
+    },
+    {
+      id: 5,
+      count: 5,
+      img: five,
+    },
+    {
+      id: 6,
+      count: 6,
+      img: six,
+    },
+    {
+      id: 7,
+      count: 7,
+      img: seven,
+    },
+    {
+      id: 8,
+      count: 8,
+      img: eight,
+    },
+    {
+      id: 9,
+      count: 9,
+      img: nine,
+    },
+    {
+      id: 10,
+      count: 10,
+      img: ten,
+    },
+  ];
+
   const [open, setOpen] = useState(false);
   const [bookNowSlide, setBookNowSlide] = useState(1);
   const [selectedLocation, setSelectedLocation] = useState(null);
-  
+  const [seatCount, setSeatCount] = useState(2);
+  const [previewImg, setPreviewImg] = useState(two);
+
+  function getImage(seatCount) {
+    //alert(seatCount)
+    let obj = seatsCount.find((o) => o.count === seatCount);
+    setPreviewImg(obj.img);
+  }
 
   return (
     <>
@@ -375,7 +447,7 @@ const PlayDetails = () => {
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl shadow-blue-600/50 transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
               <div className="bg-white pt-5">
                 <div className="sm:flex sm:items-start">
-                  <div className="mt-3 text-center sm:mt-0 sm:text-left">
+                  <div className="w-full mt-3 text-center sm:mt-0 sm:text-left">
                     <div className="flex items-center justify-between">
                       <div>
                         <h3
@@ -402,28 +474,54 @@ const PlayDetails = () => {
                       </svg>
                     </div>
                     <div className="mt-2">
-                      <div className="divide-y">
+                      <div className="hidden divide-y">
                         {locations.map((location) => (
                           <div
                             key={location.id}
-                            onClick={()=>setSelectedLocation(location.id)}
-                            className={`${selectedLocation == location.id ? "bg-blue-500" : "hover:bg-gray-100"} flex items-center justify-between p-4 cursor-pointer`}
+                            onClick={() => setSelectedLocation(location.id)}
+                            className={`${
+                              selectedLocation == location.id
+                                ? "bg-blue-500"
+                                : "hover:bg-gray-100"
+                            } flex items-center justify-between p-4 cursor-pointer`}
                           >
                             <div>
-                              <h3 className={`${selectedLocation == location.id ? "text-gray-50" : "text-gray-700"} text-base font-semibold`}>
+                              <h3
+                                className={`${
+                                  selectedLocation == location.id
+                                    ? "text-gray-50"
+                                    : "text-gray-700"
+                                } text-base font-semibold`}
+                              >
                                 {location.name}
                               </h3>
-                              <span className={`${selectedLocation == location.id ? "text-gray-50" : "text-gray-700"} text-sm`}>
+                              <span
+                                className={`${
+                                  selectedLocation == location.id
+                                    ? "text-gray-50"
+                                    : "text-gray-700"
+                                } text-sm`}
+                              >
                                 {location.time}
                               </span>
-                              <p className={`${selectedLocation == location.id ? "text-gray-100" : "text-gray-500"} mt-2 text-xs`}>
+                              <p
+                                className={`${
+                                  selectedLocation == location.id
+                                    ? "text-gray-100"
+                                    : "text-gray-500"
+                                } mt-2 text-xs`}
+                              >
                                 {location.address}
                               </p>
                             </div>
                             <div>
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className={`${selectedLocation == location.id ? "text-gray-50" : "text-gray-700"} h-4 w-4 font-thin`}
+                                className={`${
+                                  selectedLocation == location.id
+                                    ? "text-gray-50"
+                                    : "text-gray-700"
+                                } h-4 w-4 font-thin`}
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -439,13 +537,50 @@ const PlayDetails = () => {
                           </div>
                         ))}
                       </div>
+                      <div>
+                        <div className="px-4">
+                          <h3>Vishnudas Bhave: vashi</h3>
+                          <span>18 feb 2022 4:00 PM</span>
+                        </div>
+                        <div className="mt-40 relative w-full">
+                          <img src={roadImg} className="w-full h-14" />
+                          <div className="absolute mx-auto w-28 h-20 -mt-28 ml-5">
+                            <img src={previewImg} className="w-full h-full" />
+                          </div>
+                        </div>
+                        <div>
+                          <ul className="flex justify-between px-20 py-4">
+                            {seatsCount.map((seat) => (
+                              <li
+                                key={seat.id}
+                                onClick={() => {
+                                  setSeatCount(seat.count);
+                                  getImage(seat.count);
+                                }}
+                              >
+                                <span
+                                  onMouseEnter={() => getImage(seat.count)}
+                                  onMouseLeave={() => getImage(seatCount)}
+                                  className={`${
+                                    seatCount == seat.count
+                                      ? "bg-orange-600 text-gray-50"
+                                      : "bg-transparent hover:bg-orange-600 text-gray-700 hover:text-gray-50"
+                                  }  rounded-full border-transparent border-t-2 w-8 h-8 flex items-center justify-center text-sm font-medium cursor-pointer`}
+                                >
+                                  {seat.count}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
-                  onClick={()=> setBookNowSlide(2)}
+                  onClick={() => setBookNowSlide(2)}
                   type="button"
                   className={`${
                     bookNowSlide == 2
@@ -471,7 +606,7 @@ const PlayDetails = () => {
                 </button>
                 <button
                   type="button"
-                  onClick={()=> setBookNowSlide(1)}
+                  onClick={() => setBookNowSlide(1)}
                   className={`${
                     bookNowSlide == 1
                       ? "bg-gray-300 cursor-not-allowed"
