@@ -8,7 +8,6 @@ import play3 from "../../assets/img/p3.jpeg";
 import play4 from "../../assets/img/p4.jpeg";
 import GridView from "../../components/Cards/GridView";
 
-
 const PlayDetails = () => {
   const files = [
     {
@@ -67,9 +66,34 @@ const PlayDetails = () => {
     },
   ];
 
-  const [open, setOpen] = useState(false)
+  const locations = [
+    {
+      id: 1,
+      name: "Vishnudas Bhave: Vashi",
+      time: "18 feb 2022 4:00 PM",
+      address:
+        "Juhu-Vashi Road,Chhatrapati Shivaji Maharaj Chowk,Sector-16A, Vashi Kopar Khairane Rd, Opposite वाशी बस डिपो, Juhu Nagar, Sector-16, Vashi, Navi Mumbai, Maharashtra 400703",
+    },
+    {
+      id: 2,
+      name: "Vishnudas Bhave: Thane",
+      time: "19 feb 2022 4:00 PM",
+      address:
+        "Juhu-Vashi Road,Chhatrapati Shivaji Maharaj Chowk,Sector-16A, Vashi Kopar Khairane Rd, Opposite वाशी बस डिपो, Juhu Nagar, Sector-16, Vashi, Navi Mumbai, Maharashtra 400703",
+    },
+    {
+      id: 3,
+      name: "Vishnudas Bhave: Panvel",
+      time: "20 feb 2022 4:00 PM",
+      address:
+        "Juhu-Vashi Road,Chhatrapati Shivaji Maharaj Chowk,Sector-16A, Vashi Kopar Khairane Rd, Opposite वाशी बस डिपो, Juhu Nagar, Sector-16, Vashi, Navi Mumbai, Maharashtra 400703",
+    },
+  ];
 
+  const [open, setOpen] = useState(false);
   const [bookNowSlide, setBookNowSlide] = useState(1);
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  
 
   return (
     <>
@@ -127,7 +151,7 @@ const PlayDetails = () => {
                     </div>
                     <div className="">
                       <button
-                        onClick={()=> setOpen(true)}
+                        onClick={() => setOpen(true)}
                         type="button"
                         className="inline-flex items-center px-6 py-3  text-base font-medium rounded-full shadow-sm text-gray-100 bg-gradient-to-r from-red-600 to-blue-700 hover:bg-gradient-to-l hover:from-red-600 hover:to-blue-700 focus:outline-none"
                       >
@@ -329,7 +353,9 @@ const PlayDetails = () => {
         </div>
         {/* Modal start */}
         <div
-          className={`${open ? "" : "hidden"} fixed z-10 inset-0 overflow-y-auto`}
+          className={`${
+            open ? "" : "hidden"
+          } fixed z-10 inset-0 overflow-y-auto`}
           aria-labelledby="modal-title"
           role="dialog"
           aria-modal="true"
@@ -347,20 +373,22 @@ const PlayDetails = () => {
               &#8203;
             </span>
             <div className="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl shadow-blue-600/50 transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl sm:w-full">
-              <div className="bg-white pt-5 pb-4 sm:pb-4">
+              <div className="bg-white pt-5">
                 <div className="sm:flex sm:items-start">
                   <div className="mt-3 text-center sm:mt-0 sm:text-left">
                     <div className="flex items-center justify-between">
-                      <h3
-                        className="text-xl ml-4 leading-6 font-medium text-gray-900"
-                        id="modal-title"
-                      >
-                        Eka Lagnachi Pudhchi Gosht
-                      </h3>
+                      <div>
+                        <h3
+                          className="text-xl ml-4 leading-6 font-medium text-gray-900"
+                          id="modal-title"
+                        >
+                          Eka Lagnachi Pudhchi Gosht
+                        </h3>
+                      </div>
                       <svg
-                        onClick={()=> setOpen(false)}
+                        onClick={() => setOpen(false)}
                         xmlns="http://www.w3.org/2000/svg"
-                        class="text-red-400 hover:text-red-700 h-6 w-6 mr-4 font-thin cursor-pointer"
+                        className="text-red-400 hover:text-red-700 h-6 w-6 mr-4 font-thin cursor-pointer"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -375,102 +403,41 @@ const PlayDetails = () => {
                     </div>
                     <div className="mt-2">
                       <div className="divide-y">
-                        <div className="flex items-center justify-between p-4 hover:bg-gray-100 cursor-pointer">
-                          <div>
-                            <h3 className="text-base text-gray-700 font-semibold">
-                              Vishnudas Bhave
-                            </h3>
-                            <span className="text-sm text-gray-700">
-                              18 feb 2022 4:00 PM
-                            </span>
-                            <p className="mt-2 text-xs text-gray-400">
-                              Juhu-Vashi Road,Chhatrapati Shivaji Maharaj Chowk,
-                              Sector-16A, Vashi Kopar Khairane Rd, Opposite वाशी
-                              बस डिपो, Juhu Nagar, Sector-16, Vashi, Navi
-                              Mumbai, Maharashtra 400703
-                            </p>
+                        {locations.map((location) => (
+                          <div
+                            key={location.id}
+                            onClick={()=>setSelectedLocation(location.id)}
+                            className={`${selectedLocation == location.id ? "bg-blue-500" : "hover:bg-gray-100"} flex items-center justify-between p-4 cursor-pointer`}
+                          >
+                            <div>
+                              <h3 className={`${selectedLocation == location.id ? "text-gray-50" : "text-gray-700"} text-base font-semibold`}>
+                                {location.name}
+                              </h3>
+                              <span className={`${selectedLocation == location.id ? "text-gray-50" : "text-gray-700"} text-sm`}>
+                                {location.time}
+                              </span>
+                              <p className={`${selectedLocation == location.id ? "text-gray-100" : "text-gray-500"} mt-2 text-xs`}>
+                                {location.address}
+                              </p>
+                            </div>
+                            <div>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className={`${selectedLocation == location.id ? "text-gray-50" : "text-gray-700"} h-4 w-4 font-thin`}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="2"
+                                  d="M9 5l7 7-7 7"
+                                />
+                              </svg>
+                            </div>
                           </div>
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="h-4 w-4 font-thin"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-between p-4 hover:bg-gray-100 cursor-pointer">
-                          <div>
-                            <h3 className="text-base text-gray-700 font-semibold">
-                              Vishnudas Bhave
-                            </h3>
-                            <span className="text-sm text-gray-700">
-                              18 feb 2022 4:00 PM
-                            </span>
-                            <p className="mt-2 text-xs text-gray-400">
-                              Juhu-Vashi Road,Chhatrapati Shivaji Maharaj Chowk,
-                              Sector-16A, Vashi Kopar Khairane Rd, Opposite वाशी
-                              बस डिपो, Juhu Nagar, Sector-16, Vashi, Navi
-                              Mumbai, Maharashtra 400703
-                            </p>
-                          </div>
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="h-4 w-4 font-thin"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="flex items-center justify-between p-4 hover:bg-gray-100 cursor-pointer">
-                          <div>
-                            <h3 className="text-base text-gray-700 font-semibold">
-                              Vishnudas Bhave
-                            </h3>
-                            <span className="text-sm text-gray-700">
-                              18 feb 2022 4:00 PM
-                            </span>
-                            <p className="mt-2 text-xs text-gray-400">
-                              Juhu-Vashi Road,Chhatrapati Shivaji Maharaj Chowk,
-                              Sector-16A, Vashi Kopar Khairane Rd, Opposite वाशी
-                              बस डिपो, Juhu Nagar, Sector-16, Vashi, Navi
-                              Mumbai, Maharashtra 400703
-                            </p>
-                          </div>
-                          <div>
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              class="h-4 w-4 font-thin"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M9 5l7 7-7 7"
-                              />
-                            </svg>
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -478,13 +445,18 @@ const PlayDetails = () => {
               </div>
               <div className="bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
+                  onClick={()=> setBookNowSlide(2)}
                   type="button"
-                  className="w-full flex items-center justify-center rounded-md border border-transparent shadow-sm px-4 py-1.5 bg-orange-600 text-base font-medium text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
+                  className={`${
+                    bookNowSlide == 2
+                      ? "bg-orange-700 cursor-not-allowed"
+                      : "bg-orange-600 hover:bg-orange-700 cursor-pointer"
+                  } w-full flex items-center justify-center rounded-md border border-transparent shadow-sm px-4 py-1.5 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm`}
                 >
                   Next
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="ml-1 h-6 w-6"
+                    className="ml-1 h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -499,11 +471,16 @@ const PlayDetails = () => {
                 </button>
                 <button
                   type="button"
-                  className={`${bookNowSlide == 1 ? "bg-gray-300 cursor-not-allowed" : "bg-white hover:bg-gray-50 cursor-pointer"} mt-3 w-full flex items-center justify-center rounded-md border border-gray-300 shadow-sm px-4 py-1.5 text-base font-medium text-gray-700 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm`}
+                  onClick={()=> setBookNowSlide(1)}
+                  className={`${
+                    bookNowSlide == 1
+                      ? "bg-gray-300 cursor-not-allowed"
+                      : "bg-white hover:bg-gray-300 cursor-pointer"
+                  } mt-3 w-full flex items-center justify-center rounded-md border border-gray-300 shadow-sm px-4 py-1.5 text-base font-medium text-gray-700 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="mr-1 h-6 w-6"
+                    className="mr-1 h-6 w-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
