@@ -82,7 +82,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="mt-20 max-w-7xl mx-auto bg-white">
+        <div className="mt-20 max-w-7xl mx-auto bg-white pb-10">
           <div className="px-4 py-5 border-b border-gray-200">
             <div className="flex items-center justify-between flex-wrap sm:flex-nowrap">
               <div className="ml-4 mt-2">
@@ -97,8 +97,8 @@ const Index = () => {
               </div>
             </div>
           </div>
-          <div className="mt-6 grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-4">
-            <GridView plays={plays} />
+          <div className="mt-6">
+            <Carousels />
           </div>
         </div>
       </main>
