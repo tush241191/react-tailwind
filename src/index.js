@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import 'animate.css';
 
 import Index from "./views/Index";
 import PlayDetails from "./views/plays/Details";

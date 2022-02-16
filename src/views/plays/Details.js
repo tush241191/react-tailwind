@@ -107,51 +107,61 @@ const PlayDetails = () => {
       id: 1,
       count: 1,
       img: one,
+      class: "h-14"
     },
     {
       id: 2,
       count: 2,
       img: two,
+      class: "h-20"
     },
     {
       id: 3,
       count: 3,
       img: three,
+      class: "h-20"
     },
     {
       id: 4,
       count: 4,
       img: four,
+      class: "h-20"
     },
     {
       id: 5,
       count: 5,
       img: five,
+      class: "h-20"
     },
     {
       id: 6,
       count: 6,
       img: six,
+      class: "h-24"
     },
     {
       id: 7,
       count: 7,
       img: seven,
+      class: "h-24"
     },
     {
       id: 8,
       count: 8,
       img: eight,
+      class: "h-24"
     },
     {
       id: 9,
       count: 9,
       img: nine,
+      class: "h-24"
     },
     {
       id: 10,
       count: 10,
       img: ten,
+      class: "h-24"
     },
   ];
 
@@ -159,12 +169,39 @@ const PlayDetails = () => {
   const [bookNowSlide, setBookNowSlide] = useState(1);
   const [selectedLocation, setSelectedLocation] = useState(null);
   const [seatCount, setSeatCount] = useState(2);
-  const [previewImg, setPreviewImg] = useState(two);
+  const [previewImg, setPreviewImg] = useState(seatsCount[1]);
 
   function getImage(seatCount) {
     //alert(seatCount)
     let obj = seatsCount.find((o) => o.count === seatCount);
-    setPreviewImg(obj.img);
+    setPreviewImg(obj);
+  }
+
+  const animateCSS = (element, animation, prefix = "animate__") => {
+    // We create a Promise and return it
+    new Promise((resolve, reject) => {
+      const animationName = `${prefix}${animation}`;
+      const node = document.querySelector(element);
+
+      node.classList.add(`${prefix}animated`, animationName);
+
+      // When the animation ends, we clean the classes and resolve the Promise
+      function handleAnimationEnd(event) {
+        event.stopPropagation();
+        node.classList.remove(`${prefix}animated`, animationName);
+        resolve("Animation ended");
+      }
+
+      node.addEventListener("animationend", handleAnimationEnd, { once: true });
+    });
+  };
+
+  function handleNextEvent() {
+    if (bookNowSlide == 2) {
+      animateCSS("#previewImg", "slideOutRight").then((message) => {
+        // Do something after the animation
+      });
+    }
   }
 
   return (
@@ -474,7 +511,7 @@ const PlayDetails = () => {
                       </svg>
                     </div>
                     <div className="mt-2">
-                      <div className="hidden divide-y">
+                      <div className={`${bookNowSlide == 1 ? "block" : "hidden"} divide-y`}>
                         {locations.map((location) => (
                           <div
                             key={location.id}
@@ -537,15 +574,19 @@ const PlayDetails = () => {
                           </div>
                         ))}
                       </div>
-                      <div>
+                      <div className={`${bookNowSlide == 2 ? "block" : "hidden"} w-full`}>
                         <div className="px-4">
                           <h3>Vishnudas Bhave: vashi</h3>
                           <span>18 feb 2022 4:00 PM</span>
                         </div>
-                        <div className="mt-40 relative w-full">
+                        <div className="mt-8 flex justify-center font-semibold text-base text-gray-900">How many seats?</div>
+                        <div className="mt-32 relative w-full">
                           <img src={roadImg} className="w-full h-14" />
-                          <div className="absolute mx-auto w-28 h-20 -mt-28 ml-5">
-                            <img src={previewImg} className="w-full h-full" />
+                          <div id="previewImg" className="absolute flex items-end w-full h-20 -mt-28 ml-5 animate__fast">
+                            <img                              
+                              src={previewImg.img}
+                              className={`${previewImg.class} object-cover`}
+                            />
                           </div>
                         </div>
                         <div>
@@ -580,13 +621,12 @@ const PlayDetails = () => {
               </div>
               <div className="bg-gray-900 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                 <button
-                  onClick={() => setBookNowSlide(2)}
+                  onClick={() => {
+                    setBookNowSlide(2);
+                    handleNextEvent();
+                  }}
                   type="button"
-                  className={`${
-                    bookNowSlide == 2
-                      ? "bg-orange-700 cursor-not-allowed"
-                      : "bg-orange-600 hover:bg-orange-700 cursor-pointer"
-                  } w-full flex items-center justify-center rounded-md border border-transparent shadow-sm px-4 py-1.5 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm`}
+                  className={`bg-orange-600 hover:bg-orange-700 cursor-pointer w-full flex items-center justify-center rounded-md border border-transparent shadow-sm px-4 py-1.5 text-base font-medium text-white focus:outline-none sm:ml-3 sm:w-auto sm:text-sm`}
                 >
                   Next
                   <svg
