@@ -1,24 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
-import 'animate.css';
+import "animate.css";
 
-import Index from "./views/Index";
-import PlayDetails from "./views/plays/Details";
-import Plays from "./views/plays/Index"
+import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/plays" element={<Plays />} />
-        <Route path="/plays/:id" element={<PlayDetails />} />
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

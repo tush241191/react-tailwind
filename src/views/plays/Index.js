@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 import play1 from "../../assets/img/p1.jpeg";
 import play2 from "../../assets/img/p2.jpeg";
@@ -382,6 +383,7 @@ const Plays = () => {
           </div>
         </div>
       </main>
+      <Outlet />
     </>
   );
 };
