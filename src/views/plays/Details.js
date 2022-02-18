@@ -19,6 +19,7 @@ import seven from "../../assets/img/clip-arts/7.png";
 import eight from "../../assets/img/clip-arts/8.png";
 import nine from "../../assets/img/clip-arts/9.png";
 import ten from "../../assets/img/clip-arts/10.png";
+import { useNavigate } from "react-router-dom";
 
 const PlayDetails = () => {
   const files = [
@@ -171,6 +172,8 @@ const PlayDetails = () => {
   const [seatCount, setSeatCount] = useState(2);
   const [previewImg, setPreviewImg] = useState(seatsCount[1]);
 
+  let navigate = useNavigate();
+
   function getImage(seatCount) {
     //alert(seatCount)
     let obj = seatsCount.find((o) => o.count === seatCount);
@@ -179,7 +182,7 @@ const PlayDetails = () => {
 
   const animateCSS = (element, animation, prefix = "animate__") => {
     // We create a Promise and return it
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       const animationName = `${prefix}${animation}`;
       const node = document.querySelector(element);
 
@@ -199,7 +202,7 @@ const PlayDetails = () => {
   function handleNextEvent() {
     if (bookNowSlide == 2) {
       animateCSS("#previewImg", "slideOutRight").then((message) => {
-        // Do something after the animation
+        navigate("/theater/vishnudas-bhave-vashi");
       });
     }
   }

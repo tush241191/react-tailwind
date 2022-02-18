@@ -47,14 +47,16 @@ const Navbar = () => {
           <div className="relative h-16 flex justify-between">
             <div className="relative z-10 px-2 flex lg:px-0">
               <div className="flex-shrink-0 flex items-center">
-                <img
-                  alt="..."
-                  src={logo}
-                  className="block h-12 w-auto rounded-full shadow-xl shadow-blue-600/50"
-                />
-                <span className="text-white text-lg ml-2 hidden">
-                  AageBadhoIndia
-                </span>
+                <Link to={"/"}>
+                  <img
+                    alt="..."
+                    src={logo}
+                    className="block h-12 w-auto rounded-full shadow-xl shadow-blue-600/50"
+                  />
+                  <span className="text-white text-lg ml-2 hidden">
+                    AageBadhoIndia
+                  </span>
+                </Link>
               </div>
             </div>
             <div className="relative flex-1 px-2 flex items-center justify-center sm:absolute sm:inset-0">
