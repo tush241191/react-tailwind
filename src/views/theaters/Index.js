@@ -1,9 +1,8 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import VishnudasBhaveVashi from "./VishnudasBhaveVashi";
 
-import logo from "../../assets/img/abi_logo_png.png";
-import Index from "../Index";
 import TheaterHeader from "../../components/Navbars/TheaterHeader";
+import AdyaKrantiveerVasudevBalwantPhadkePanvel from "./AdyaKrantiveerVasudevBalwantPhadkePanvel";
 
 const Theater = () => {
   return (
@@ -14,6 +13,10 @@ const Theater = () => {
           <Route
             path="vishnudas-bhave-vashi"
             element={<VishnudasBhaveVashi />}
+          />
+          <Route
+            path="adya-krantiveer-vasudev-balwant-phadke-panvel"
+            element={<AdyaKrantiveerVasudevBalwantPhadkePanvel />}
           />
         </Routes>
       </main>

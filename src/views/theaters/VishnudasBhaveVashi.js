@@ -455,7 +455,7 @@ const VishnudasBhaveVashi = () => {
       <div className="max-w-screen-2xl mx-auto flex flex-col overflow-hidden">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <TheaterLayout theater={theater}/>
+            <TheaterLayout theater={theater} rowReverse={true} colReverse={true}/>
           </div>
         </div>
       </div>

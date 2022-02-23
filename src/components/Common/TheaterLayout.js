@@ -1,4 +1,4 @@
-const TheaterLayout = ({ theater }) => {
+const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
 
   function checkSpace(index, obj) {
     let space = obj.find((key) => key.rowNumber == index);
@@ -8,11 +8,11 @@ const TheaterLayout = ({ theater }) => {
       ));
     }
   }
-  
+
   return (
     <>
       <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-        <table className="min-w-full w-full my-10 flex flex-col-reverse items-center px-4">
+        <table className={`${colReverse ? 'flex-col-reverse' : 'flex-col'} min-w-full w-full my-10 flex items-center px-4`}>
           {theater.rows.map((row, index) => (
             <>
               {row.name == "empty" ? (
@@ -36,7 +36,7 @@ const TheaterLayout = ({ theater }) => {
                   </tr>
                 </>
               ) : (
-                <tr className="flex items-center flex-row-reverse py-1">
+                <tr className={` ${rowReverse ? 'flex-row-reverse' : '' } flex items-center py-1`}>
                   <td className="text-sm mx-1 font-semibold">{row.name}</td>
                   {[...Array(row.size)].map((e, i) => (
                     <>
