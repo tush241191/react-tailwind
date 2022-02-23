@@ -1,487 +1,461 @@
-const VishnudasBhaveVashi = () => {
-  const rows = [
-    {
-      name: "A",
-      size: 28,
-      space: [
-        {
-          name: 7,
-          count: 2,
-        },
-        {
-          name: 14,
-          count: 2,
-        },
-        {
-          name: 21,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "B",
-      size: 32,
-      space: [
-        {
-          name: 8,
-          count: 2,
-        },
-        {
-          name: 16,
-          count: 2,
-        },
-        {
-          name: 24,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "C",
-      size: 32,
-      space: [
-        {
-          name: 8,
-          count: 2,
-        },
-        {
-          name: 16,
-          count: 2,
-        },
-        {
-          name: 24,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "D",
-      size: 33,
-      space: [
-        {
-          name: 8,
-          count: 2,
-        },
-        {
-          name: 17,
-          count: 2,
-        },
-        {
-          name: 25,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "E",
-      size: 36,
-      space: [
-        {
-          name: 9,
-          count: 2,
-        },
-        {
-          name: 18,
-          count: 2,
-        },
-        {
-          name: 27,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "F",
-      size: 36,
-      space: [
-        {
-          name: 9,
-          count: 2,
-        },
-        {
-          name: 18,
-          count: 2,
-        },
-        {
-          name: 27,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "G",
-      size: 39,
-      space: [
-        {
-          name: 10,
-          count: 2,
-        },
-        {
-          name: 20,
-          count: 2,
-        },
-        {
-          name: 29,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "H",
-      size: 40,
-      space: [
-        {
-          name: 10,
-          count: 2,
-        },
-        {
-          name: 20,
-          count: 2,
-        },
-        {
-          name: 30,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "I",
-      size: 42,
-      space: [
-        {
-          name: 11,
-          count: 2,
-        },
-        {
-          name: 21,
-          count: 2,
-        },
-        {
-          name: 31,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "J",
-      size: 42,
-      space: [
-        {
-          name: 11,
-          count: 2,
-        },
-        {
-          name: 21,
-          count: 2,
-        },
-        {
-          name: 31,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "K",
-      size: 43,
-      space: [
-        {
-          name: 11,
-          count: 2,
-        },
-        {
-          name: 22,
-          count: 2,
-        },
-        {
-          name: 32,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "empty",
-    },
-    {
-      name: "L",
-      size: 46,
-      space: [
-        {
-          name: 12,
-          count: 2,
-        },
-        {
-          name: 23,
-          count: 2,
-        },
-        {
-          name: 34,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "M",
-      size: 46,
-      space: [
-        {
-          name: 12,
-          count: 2,
-        },
-        {
-          name: 23,
-          count: 2,
-        },
-        {
-          name: 34,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "N",
-      size: 47,
-      space: [
-        {
-          name: 12,
-          count: 2,
-        },
-        {
-          name: 24,
-          count: 2,
-        },
-        {
-          name: 35,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "O",
-      size: 50,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 25,
-          count: 2,
-        },
-        {
-          name: 37,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "P",
-      size: 50,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 25,
-          count: 2,
-        },
-        {
-          name: 37,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "Q",
-      size: 51,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 26,
-          count: 2,
-        },
-        {
-          name: 38,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "R",
-      size: 50,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 25,
-          count: 2,
-        },
-        {
-          name: 37,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "balcony",
-    },
-    {
-      name: "S",
-      size: 50,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 25,
-          count: 2,
-        },
-        {
-          name: 37,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "T",
-      size: 50,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 25,
-          count: 2,
-        },
-        {
-          name: 37,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "U",
-      size: 52,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 26,
-          count: 2,
-        },
-        {
-          name: 39,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "V",
-      size: 54,
-      space: [
-        {
-          name: 14,
-          count: 2,
-        },
-        {
-          name: 27,
-          count: 2,
-        },
-        {
-          name: 40,
-          count: 2,
-        },
-      ],
-    },
-    {
-      name: "W",
-      size: 52,
-      space: [
-        {
-          name: 13,
-          count: 2,
-        },
-        {
-          name: 26,
-          count: 2,
-        },
-        {
-          name: 39,
-          count: 2,
-        },
-      ],
-    },
-  ];
+import TheaterLayout from "../../components/Common/TheaterLayout";
 
-  function checkSpace(index, obj) {
-    let space = obj.find((key) => key.name == index);
-    if (space != undefined) {
-      return [...Array(space.count)].map((e, i) => (
-        <td className="border border-transparent w-6 h-6">&nbsp;</td>
-      ));
-    }
-  }
+const VishnudasBhaveVashi = () => {
+  const theater = {
+    name: "Vishnudas Bhave Natyagruha: Vashi",
+    rows: [
+      {
+        name: "A",
+        size: 28,
+        price: 400,
+        space: [
+          {
+            rowNumber: 7,
+            count: 2,
+          },
+          {
+            rowNumber: 14,
+            count: 2,
+          },
+          {
+            rowNumber: 21,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "B",
+        price: 400,
+        size: 32,
+        space: [
+          {
+            rowNumber: 8,
+            count: 2,
+          },
+          {
+            rowNumber: 16,
+            count: 2,
+          },
+          {
+            rowNumber: 24,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "C",
+        price: 400,
+        size: 32,
+        space: [
+          {
+            rowNumber: 8,
+            count: 2,
+          },
+          {
+            rowNumber: 16,
+            count: 2,
+          },
+          {
+            rowNumber: 24,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "D",
+        price: 400,
+        size: 33,
+        space: [
+          {
+            rowNumber: 8,
+            count: 2,
+          },
+          {
+            rowNumber: 17,
+            count: 2,
+          },
+          {
+            rowNumber: 25,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "E",
+        price: 400,
+        size: 36,
+        space: [
+          {
+            rowNumber: 9,
+            count: 2,
+          },
+          {
+            rowNumber: 18,
+            count: 2,
+          },
+          {
+            rowNumber: 27,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "F",
+        price: 400,
+        size: 36,
+        space: [
+          {
+            rowNumber: 9,
+            count: 2,
+          },
+          {
+            rowNumber: 18,
+            count: 2,
+          },
+          {
+            rowNumber: 27,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "G",
+        price: 400,
+        size: 39,
+        space: [
+          {
+            rowNumber: 10,
+            count: 2,
+          },
+          {
+            rowNumber: 20,
+            count: 2,
+          },
+          {
+            rowNumber: 29,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "H",
+        price: 400,
+        size: 40,
+        space: [
+          {
+            rowNumber: 10,
+            count: 2,
+          },
+          {
+            rowNumber: 20,
+            count: 2,
+          },
+          {
+            rowNumber: 30,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "I",
+        price: 400,
+        size: 42,
+        space: [
+          {
+            rowNumber: 11,
+            count: 2,
+          },
+          {
+            rowNumber: 21,
+            count: 2,
+          },
+          {
+            rowNumber: 31,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "J",
+        price: 400,
+        size: 42,
+        space: [
+          {
+            rowNumber: 11,
+            count: 2,
+          },
+          {
+            rowNumber: 21,
+            count: 2,
+          },
+          {
+            rowNumber: 31,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "K",
+        price: 400,
+        size: 43,
+        space: [
+          {
+            rowNumber: 11,
+            count: 2,
+          },
+          {
+            rowNumber: 22,
+            count: 2,
+          },
+          {
+            rowNumber: 32,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "empty",
+      },
+      {
+        name: "L",
+        price: 400,
+        size: 46,
+        space: [
+          {
+            rowNumber: 12,
+            count: 2,
+          },
+          {
+            rowNumber: 23,
+            count: 2,
+          },
+          {
+            rowNumber: 34,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "M",
+        price: 400,
+        size: 46,
+        space: [
+          {
+            rowNumber: 12,
+            count: 2,
+          },
+          {
+            rowNumber: 23,
+            count: 2,
+          },
+          {
+            rowNumber: 34,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "N",
+        price: 400,
+        size: 47,
+        space: [
+          {
+            rowNumber: 12,
+            count: 2,
+          },
+          {
+            rowNumber: 24,
+            count: 2,
+          },
+          {
+            rowNumber: 35,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "O",
+        price: 400,
+        size: 50,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 25,
+            count: 2,
+          },
+          {
+            rowNumber: 37,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "P",
+        price: 400,
+        size: 50,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 25,
+            count: 2,
+          },
+          {
+            rowNumber: 37,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "Q",
+        price: 400,
+        size: 51,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 26,
+            count: 2,
+          },
+          {
+            rowNumber: 38,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "R",
+        price: 400,
+        size: 50,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 25,
+            count: 2,
+          },
+          {
+            rowNumber: 37,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "balcony",
+      },
+      {
+        name: "S",
+        price: 300,
+        size: 50,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 25,
+            count: 2,
+          },
+          {
+            rowNumber: 37,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "T",
+        price: 300,
+        size: 50,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 25,
+            count: 2,
+          },
+          {
+            rowNumber: 37,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "U",
+        price: 300,
+        size: 52,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 26,
+            count: 2,
+          },
+          {
+            rowNumber: 39,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "V",
+        price: 300,
+        size: 54,
+        space: [
+          {
+            rowNumber: 14,
+            count: 2,
+          },
+          {
+            rowNumber: 27,
+            count: 2,
+          },
+          {
+            rowNumber: 40,
+            count: 2,
+          },
+        ],
+      },
+      {
+        name: "W",
+        price: 300,
+        size: 52,
+        space: [
+          {
+            rowNumber: 13,
+            count: 2,
+          },
+          {
+            rowNumber: 26,
+            count: 2,
+          },
+          {
+            rowNumber: 39,
+            count: 2,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
       <div className="max-w-screen-2xl mx-auto flex flex-col overflow-hidden">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-              <table className="min-w-full w-full my-10 flex flex-col-reverse items-center overflow-auto px-4">
-                {rows.map((row, index) => (
-                  <>
-                    {row.name == "empty" ? (
-                      <>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </>
-                    ) : row.name == "balcony" ? (
-                      <>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                        <tr className="w-full">
-                          <td className="w-full flex items-center justify-center text-sm font-semibold uppercase">
-                            Balcony
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>&nbsp;</td>
-                        </tr>
-                      </>
-                    ) : (
-                      <tr className="flex items-center flex-row-reverse py-1">
-                        <td className="text-sm mx-1 font-semibold">
-                          {row.name}
-                        </td>
-                        {[...Array(row.size)].map((e, i) => (
-                          <>
-                            {checkSpace(i, row.space)}
-                            <td className="border w-6 h-6 text-xs text-gray-500 flex items-center justify-center">
-                              {i + 1}
-                            </td>
-                          </>
-                        ))}
-                        <td className="text-sm mx-1 font-semibold">
-                          {row.name}
-                        </td>
-                      </tr>
-                    )}
-                  </>
-                ))}
-              </table>
-              <div className="h-10 w-full max-w-md mx-auto text-sm font-medium border flex items-center justify-center mb-10">STAGE</div>
-            </div>
+            <TheaterLayout theater={theater}/>
           </div>
         </div>
       </div>
