@@ -61,7 +61,7 @@ const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
       <td
         key={`${rowName}-${seatNumber}`}
         id={`${rowName}-${seatNumber}`}
-        className={`${css} mx-0.5 border w-6 h-6 text-xs flex items-center justify-center rounded-md`}
+        className={`${css} mr-0.5 border w-6 h-6 text-xs flex items-center justify-center rounded-md`}
       >
         {seatNumber < 10 ? `0${seatNumber}` : seatNumber}
       </td>
