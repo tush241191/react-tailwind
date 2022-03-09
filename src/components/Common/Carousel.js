@@ -17,15 +17,15 @@ const Carousels = () => {
             showThumbs={false}
           >
             <div>
-              <img className="w-full h-full object-cover" src={slide1} />
+              <img className="w-full h-full object-cover" src={slide1} alt="" />
               <p className="legend">Legend 1</p>
             </div>
             <div>
-              <img className="w-full h-full object-cover" src={slide2} />
+              <img className="w-full h-full object-cover" src={slide2} alt="" />
               <p className="legend">Legend 2</p>
             </div>
             <div>
-              <img className="w-full h-full object-cover" src={slide3} />
+              <img className="w-full h-full object-cover" src={slide3} alt="" />
               <p className="legend">Legend 3</p>
             </div>
           </Carousel>

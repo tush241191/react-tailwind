@@ -19,8 +19,8 @@ const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
   ];
 
   function checkSpace(index, obj) {
-    let space = obj.find((key) => key.rowNumber == index);
-    if (space != undefined) {
+    let space = obj.find((key) => key.rowNumber === index);
+    if (space !== undefined) {
       return [...Array(space.count)].map((e, i) => (
         <td className="border border-transparent w-6 h-6">&nbsp;</td>
       ));
@@ -28,16 +28,16 @@ const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
   }
 
   function createSeats(rowName, seatNumber) {
-    let obj = data.find((e) => e.row == rowName);
+    let obj = data.find((e) => e.row === rowName);
     return (
       <>
-        {obj != undefined ? (
+        {obj !== undefined ? (
           <>
-            {obj.available.find((e) => e == seatNumber) != undefined ? (
+            {obj.available.find((e) => e === seatNumber) !== undefined ? (
               <>
                 {returnSeatBlock(rowName,seatNumber,bookingStatusColor.available)}
               </>
-            ) : obj.booked.find((e) => e == seatNumber) != undefined ? (
+            ) : obj.booked.find((e) => e === seatNumber) !== undefined ? (
               <>
                 {returnSeatBlock(rowName,seatNumber,bookingStatusColor.booked)}
               </>
@@ -78,13 +78,13 @@ const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
         >
           {theater.rows.map((row, index) => (
             <>
-              {row.name == "empty" ? (
+              {row.name === "empty" ? (
                 <>
                   <tr>
                     <td>&nbsp;</td>
                   </tr>
                 </>
-              ) : row.name == "balcony" ? (
+              ) : row.name === "balcony" ? (
                 <>
                   <tr>
                     <td>&nbsp;</td>

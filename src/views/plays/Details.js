@@ -200,7 +200,7 @@ const PlayDetails = () => {
   };
 
   function handleNextEvent() {
-    if (bookNowSlide == 2) {
+    if (bookNowSlide === 2) {
       animateCSS("#previewImg", "slideOutRight").then((message) => {
         navigate("/theater/vishnudas-bhave-vashi");
       });
@@ -286,6 +286,7 @@ const PlayDetails = () => {
                       <div className="flex-row mt-4 space-y-4">
                         <div className="flex items-center space-x-2">
                           <img
+                            alt=""
                             className="w-20 h-auto rounded-full"
                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
                           />
@@ -293,6 +294,7 @@ const PlayDetails = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <img
+                            alt=""
                             className="w-20 h-auto rounded-full"
                             src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
                           />
@@ -300,6 +302,7 @@ const PlayDetails = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <img
+                            alt=""
                             className="w-20 h-auto rounded-full"
                             src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
                           />
@@ -307,6 +310,7 @@ const PlayDetails = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <img
+                            alt=""
                             className="w-20 h-auto rounded-full"
                             src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
                           />
@@ -321,6 +325,7 @@ const PlayDetails = () => {
                       <div className="flex-row mt-4 space-y-4">
                         <div className="flex items-center space-x-2">
                           <img
+                            alt=""
                             className="w-20 h-auto rounded-full"
                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
                           />
@@ -335,6 +340,7 @@ const PlayDetails = () => {
                       <div className="flex-row mt-4 space-y-4">
                         <div className="flex items-center space-x-2">
                           <img
+                            alt=""
                             className="w-20 h-auto rounded-full"
                             src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
                           />
@@ -352,7 +358,6 @@ const PlayDetails = () => {
                       </h2>
                       <div className="mt-4">
                         <ul
-                          role="list"
                           className="grid grid-cols-2 gap-x-4 sm:grid-cols-3 sm:gap-x-6"
                         >
                           {files.map((file) => (
@@ -514,13 +519,13 @@ const PlayDetails = () => {
                       </svg>
                     </div>
                     <div className="mt-2">
-                      <div className={`${bookNowSlide == 1 ? "block" : "hidden"} divide-y`}>
+                      <div className={`${bookNowSlide === 1 ? "block" : "hidden"} divide-y`}>
                         {locations.map((location) => (
                           <div
                             key={location.id}
                             onClick={() => setSelectedLocation(location.id)}
                             className={`${
-                              selectedLocation == location.id
+                              selectedLocation === location.id
                                 ? "bg-blue-500"
                                 : "hover:bg-gray-100"
                             } flex items-center justify-between p-4 cursor-pointer`}
@@ -528,7 +533,7 @@ const PlayDetails = () => {
                             <div>
                               <h3
                                 className={`${
-                                  selectedLocation == location.id
+                                  selectedLocation === location.id
                                     ? "text-gray-50"
                                     : "text-gray-700"
                                 } text-base font-semibold`}
@@ -537,7 +542,7 @@ const PlayDetails = () => {
                               </h3>
                               <span
                                 className={`${
-                                  selectedLocation == location.id
+                                  selectedLocation === location.id
                                     ? "text-gray-50"
                                     : "text-gray-700"
                                 } text-sm`}
@@ -546,7 +551,7 @@ const PlayDetails = () => {
                               </span>
                               <p
                                 className={`${
-                                  selectedLocation == location.id
+                                  selectedLocation === location.id
                                     ? "text-gray-100"
                                     : "text-gray-500"
                                 } mt-2 text-xs`}
@@ -558,7 +563,7 @@ const PlayDetails = () => {
                               <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className={`${
-                                  selectedLocation == location.id
+                                  selectedLocation === location.id
                                     ? "text-gray-50"
                                     : "text-gray-700"
                                 } h-4 w-4 font-thin`}
@@ -577,16 +582,17 @@ const PlayDetails = () => {
                           </div>
                         ))}
                       </div>
-                      <div className={`${bookNowSlide == 2 ? "block" : "hidden"} w-full`}>
+                      <div className={`${bookNowSlide === 2 ? "block" : "hidden"} w-full`}>
                         <div className="px-4">
                           <h3>Vishnudas Bhave: vashi</h3>
                           <span>18 feb 2022 4:00 PM</span>
                         </div>
                         <div className="mt-8 flex justify-center font-semibold text-base text-gray-900">How many seats?</div>
                         <div className="mt-32 relative w-full">
-                          <img src={roadImg} className="w-full h-14" />
+                          <img src={roadImg} className="w-full h-14" alt=""/>
                           <div id="previewImg" className="absolute flex items-end w-full h-20 -mt-28 ml-5 animate__fast">
-                            <img                              
+                            <img                  
+                              alt=""            
                               src={previewImg.img}
                               className={`${previewImg.class} object-cover`}
                             />
@@ -606,7 +612,7 @@ const PlayDetails = () => {
                                   onMouseEnter={() => getImage(seat.count)}
                                   onMouseLeave={() => getImage(seatCount)}
                                   className={`${
-                                    seatCount == seat.count
+                                    seatCount === seat.count
                                       ? "bg-orange-600 text-gray-50"
                                       : "bg-transparent hover:bg-orange-600 text-gray-700 hover:text-gray-50"
                                   }  rounded-full border-transparent border-t-2 w-8 h-8 flex items-center justify-center text-sm font-medium cursor-pointer`}
@@ -651,7 +657,7 @@ const PlayDetails = () => {
                   type="button"
                   onClick={() => setBookNowSlide(1)}
                   className={`${
-                    bookNowSlide == 1
+                    bookNowSlide === 1
                       ? "bg-gray-300 cursor-not-allowed"
                       : "bg-white hover:bg-gray-300 cursor-pointer"
                   } mt-3 w-full flex items-center justify-center rounded-md border border-gray-300 shadow-sm px-4 py-1.5 text-base font-medium text-gray-700 focus:outline-none sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm`}
