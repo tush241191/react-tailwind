@@ -35,21 +35,33 @@ const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
           <>
             {obj.available.find((e) => e === seatNumber) !== undefined ? (
               <>
-                {returnSeatBlock(rowName,seatNumber,bookingStatusColor.available)}
+                {returnSeatBlock(
+                  rowName,
+                  seatNumber,
+                  bookingStatusColor.available
+                )}
               </>
             ) : obj.booked.find((e) => e === seatNumber) !== undefined ? (
               <>
-                {returnSeatBlock(rowName,seatNumber,bookingStatusColor.booked)}
+                {returnSeatBlock(
+                  rowName,
+                  seatNumber,
+                  bookingStatusColor.booked
+                )}
               </>
             ) : (
               <>
-                {returnSeatBlock(rowName,seatNumber,bookingStatusColor.blocked)}
+                {returnSeatBlock(
+                  rowName,
+                  seatNumber,
+                  bookingStatusColor.blocked
+                )}
               </>
             )}
           </>
         ) : (
           <>
-            {returnSeatBlock(rowName,seatNumber,bookingStatusColor.blocked)}
+            {returnSeatBlock(rowName, seatNumber, bookingStatusColor.blocked)}
           </>
         )}
       </>
@@ -125,6 +137,27 @@ const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
         </table>
         <div className="bg-gray-50 h-10 w-full max-w-md mx-auto text-sm font-medium border flex items-center justify-center mb-10 rounded-t-md">
           STAGE
+        </div>
+      </div>
+      <div class="fixed bottom-6 right-6">
+        <div className="p-4 w-auto rounded-md shadow-md bg-gray-900">
+          <div className="flex items-center space-x-2 text-white">
+            <select className="bg-transparent border-none focus:outline-none">
+              <option>1 seat</option>
+              <option>2 seats</option>
+              <option>3 seats</option>
+              <option>4 seats</option>
+              <option>5 seats</option>
+              <option>6 seats</option>
+              <option>7 seats</option>
+              <option>8 seats</option>
+              <option>9 seats</option>
+              <option>10 seats</option>
+            </select>
+            <span>|</span>
+            <span>₹ 800</span>
+            <button className="inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-full shadow-sm text-gray-100 bg-gradient-to-r from-red-600 to-blue-700 hover:bg-gradient-to-l hover:from-red-600 hover:to-blue-700 focus:outline-none">Proceed</button>
+          </div>
         </div>
       </div>
     </>

@@ -8,7 +8,7 @@ const Theater = () => {
   return (
     <>
       <TheaterHeader/>
-      <main className="w-full">
+      <main className="relative w-full">
         <Routes>
           <Route
             path="vishnudas-bhave-vashi"
