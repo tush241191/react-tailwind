@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const bookingStatusColor = {
   available:
     "border-green-400 bg-white hover:bg-green-400 hover:text-white text-gray-500 cursor-pointer",
@@ -157,7 +159,7 @@ const TheaterLayout = ({ theater, colReverse = false, rowReverse = false }) => {
             <div className="flex items-center space-x-2">
               <span>|</span>
               <span>₹ 800</span>
-              <button className="inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-full shadow-sm text-gray-100 bg-gradient-to-r from-red-600 to-blue-700 hover:bg-gradient-to-l hover:from-red-600 hover:to-blue-700 focus:outline-none">Proceed</button>
+              <Link to="/checkout" className="inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-full shadow-sm text-gray-100 bg-gradient-to-r from-red-600 to-blue-700 hover:bg-gradient-to-l hover:from-red-600 hover:to-blue-700 focus:outline-none">Proceed</Link>
             </div>
           </div>
         </div>
