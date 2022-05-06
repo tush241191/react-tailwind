@@ -76,7 +76,7 @@ const Dashboard = () => {
     <main className='flex-1'>
       <PageHeader title={'Home'}/>
       <div className='px-4 mt-6 sm:px-6 lg:px-8'>
-        <div class="columns-3 ...">
+        <div class="grid lg:flex items-center space-y-4 lg:space-y-0">
           <div class="max-w-xl mx-auto bg-white rounded-lg border border-sky-500  shadow-cyan-500/50 drop-shadow-xl shadow-xl ..." >
             <div class="container mx-auto px-4">
               <Doughnut data={tankFloorDiameter} />
