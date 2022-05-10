@@ -45,11 +45,7 @@ const Layout = ({ children }) => {
                 </button>
               </div>
               <div className='flex-shrink-0 flex items-center px-4'>
-                <img
-                  className='h-8 w-auto'
-                  src='https://tailwindui.com/img/logos/workflow-logo-purple-500-mark-gray-700-text.svg'
-                  alt='Workflow'
-                />
+                <span>Admin Panel</span>
               </div>
               <div className='mt-5 flex-1 h-0 overflow-y-auto'>
                 <nav className='px-2'>
