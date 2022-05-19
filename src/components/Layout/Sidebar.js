@@ -1,5 +1,6 @@
 import { Disclosure } from '@headlessui/react'
 import { HomeIcon, MenuIcon, TableIcon, BellIcon, ChartPieIcon, LibraryIcon, SupportIcon, CollectionIcon } from '@heroicons/react/outline'
+import { Link } from 'react-router-dom'
 
 const navigation = [
   { name: 'Dashboard', icon: HomeIcon, current: true, href: '/' },
@@ -70,8 +71,8 @@ const Sidebar = () => {
           {navigation.map((item) =>
             !item.children ? (
               <div key={item.name}>
-                <a
-                  href="#"
+                <Link
+                  to={item.href}
                   className={classNames(
                     item.current
                       ? 'bg-indigo-100 text-gray-900'
@@ -87,7 +88,7 @@ const Sidebar = () => {
                     aria-hidden="true"
                   />
                   {item.name}
-                </a>
+                </Link>
               </div>
             ) : (
               <Disclosure as="div" key={item.name} className="space-y-1">
